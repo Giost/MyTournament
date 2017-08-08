@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Tournament</string>
+    <string name="title_activity_home_page">HomePage</string>
 </resources>
