@@ -20,6 +20,7 @@ import com.stefano.gioda.mytournament.classi.Squadra;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HomePage extends AppCompatActivity {
 
@@ -43,6 +44,19 @@ public class HomePage extends AppCompatActivity {
                     startActivity(visualTornei);
                 }
             }
+        );
+
+        visualSquadre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent visualSquadre = new Intent(getApplicationContext(),VisualizzaSquadre.class);
+                squadreRegistrate = new ArrayList<>();
+                squadreRegistrate.add(new Squadra("Prova", new ArrayList<>(Arrays.asList(new Giocatore("a","b","c")))));
+                visualSquadre.putExtra("Squadre", squadreRegistrate);
+                startActivity(visualSquadre);
+            }
+          }
         );
     }
 }

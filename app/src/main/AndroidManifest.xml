@@ -21,7 +21,10 @@
         </activity>
         <activity
             android:name=".activity.VisualizzaTornei"
-            android:label="@string/title_activity_visualizza_tornei"></activity>
+            android:label="@string/title_activity_visualizza_tornei" />
+        <activity
+            android:name=".activity.VisualizzaSquadre"
+            android:label="@string/title_activity_visualizza_squadre"/>
     </application>
 
 </manifest>

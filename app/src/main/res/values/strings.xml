@@ -2,4 +2,6 @@
     <string name="app_name">My Tournament</string>
     <string name="title_activity_home_page">My Tournament</string>
     <string name="title_activity_visualizza_tornei">Visualizza Tornei</string>
+    <string name="title_activity_visualizza_squadre">Visualizza Squadre</string>
+    <string name="title_activity_crea_torneo">Crea Torneo</string>
 </resources>

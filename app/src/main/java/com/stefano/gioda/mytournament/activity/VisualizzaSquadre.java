@@ -1,23 +1,29 @@
 package com.stefano.gioda.mytournament.activity;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.stefano.gioda.mytournament.R;
+import com.stefano.gioda.mytournament.classi.Squadra;
 
-public class VisualizzaTornei extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class VisualizzaSquadre extends AppCompatActivity {
+
+    private ArrayList<Squadra> squadre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visualizza_tornei);
+        setContentView(R.layout.activity_visualizza_squadre);
+
+        squadre = (ArrayList<Squadra>) getIntent().getSerializableExtra("Squadre");
+        System.out.println(squadre);
+        System.out.println(squadre.get(0).getNome());
     }
 
     @Override
