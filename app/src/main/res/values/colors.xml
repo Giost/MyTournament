@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="home_background">#23ec0d</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="float_add">#1e59d9</color>
+    <color name="visualizza_tornei">#3383d4</color>
+    <color name="crea_torneo">#33c7d4</color>
+    <color name="visualizza_squadre">#33d446</color>
 </resources>

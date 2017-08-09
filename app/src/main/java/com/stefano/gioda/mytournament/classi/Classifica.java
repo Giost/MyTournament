@@ -22,9 +22,9 @@ public class Classifica
 
         for (int i = 0; i<numeroSquadre; i++)
         {
-            getPunti().add(0);
-            getGoalFatti().add(0);
-            getGoalSubiti().add(0);
+            punti.add(0);
+            goalFatti.add(0);
+            goalSubiti.add(0);
         }
     }
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.stefano.gioda.mytournament.activity.VisualizzaTornei">
+
+    <LinearLayout
+        android:id="@+id/torneo_fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/visualizza_tornei"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@+id/torneo_empty"
+        android:layout_toEndOf="@+id/torneo_empty">
+
+        <TextView
+            android:id="@+id/textView307"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Nome"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView308"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Tipo"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textView309"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Finito"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/torneo_empty"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/torneo_fields"
+        android:background="@color/home_background"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ATTENZIONE! Non è ancora stato creato alcun torneo."
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_recycler"
+        android:layout_below="@+id/torneo_empty"
+        android:layout_alignParentBottom="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/float_add"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</RelativeLayout>

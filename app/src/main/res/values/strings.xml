@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Tournament</string>
-    <string name="title_activity_home_page">HomePage</string>
+    <string name="title_activity_home_page">My Tournament</string>
+    <string name="title_activity_visualizza_tornei">Visualizza Tornei</string>
 </resources>
