@@ -10,45 +10,57 @@ public class TorneoEliminazione implements Torneo
 {
     private String nome;
     private ArrayList<Squadra> squadre;
-    //private CalendarioEliminazione calendario;
+    private CalendarioEliminazione calendario;
+    
+    public TorneoEliminazione(String nome,ArrayList<Squadra> squadre)
+    {
+    	this.nome=nome;
+        this.squadre=new ArrayList<Squadra>(squadre);
+        calendario = new CalendarioEliminazione(squadre.size());
+    }
 
     @Override
     public String getNome() {
-        return null;
+        return nome;
     }
 
     @Override
     public ArrayList<Squadra> getSquadre() {
-        return null;
+        return squadre;
     }
 
     @Override
     public ArrayList<Giocatore> getGiocatori() {
-        return null;
+    	ArrayList<Giocatore> giocatori = new ArrayList<>();
+        for (Squadra squadra : squadre)
+        {
+            giocatori.addAll(squadra.getGiocatori());
+        }
+        return giocatori;
     }
 
     @Override
     public ArrayList<ArrayList<Integer>> getCalendario() {
-        return null;
+    	return calendario.getCalendario();
     }
 
     @Override
     public ArrayList<ArrayList<Integer>> getCalendario(int index) {
-        return null;
+    	return calendario.getCalendario(index);
     }
 
     @Override
     public ArrayList<String> getRisultati() {
-        return null;
+    	return calendario.getRisultati();
     }
 
     @Override
     public ArrayList<String> getRisultati(int index) {
-        return null;
+    	return calendario.getRisultati(index);
     }
 
     @Override
     public void updateRisultato(int index1, int index2, int goal1, int goal2) {
-
+    	calendario.updateRisultato(index1, index2, goal1, goal2);
     }
 }
