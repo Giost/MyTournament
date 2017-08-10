@@ -17,7 +17,7 @@ public class TorneoItaliana implements Torneo
     public TorneoItaliana(String nome, ArrayList<Squadra> squadre)
     {
         this.nome=nome;
-        this.squadre=squadre;
+        this.squadre=new ArrayList<Squadra>(squadre);
         classifica = new Classifica(squadre.size());
         calendario = new CalendarioGirone(squadre.size());
     }
@@ -66,5 +66,25 @@ public class TorneoItaliana implements Torneo
     {
         calendario.updateRisultato(index1,index2,goal1,goal2);
         classifica.updateRisultato(index1,index2,goal1,goal2);
+    }
+    
+    public ArrayList<Integer> getPunti()
+    {
+    	return classifica.getPunti();
+    }
+    
+    public ArrayList<Integer> getGoalFatti()
+    {
+    	return classifica.getGoalFatti();
+    }
+    
+    public ArrayList<Integer> getGoalSubiti()
+    {
+    	return classifica.getGoalSubiti();
+    }
+    
+    public ArrayList<Integer> getDifferenzaReti()
+    {
+    	return classifica.getDifferenzaReti();
     }
 }
