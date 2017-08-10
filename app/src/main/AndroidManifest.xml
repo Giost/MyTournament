@@ -24,7 +24,8 @@
             android:label="@string/title_activity_visualizza_tornei" />
         <activity
             android:name=".activity.VisualizzaSquadre"
-            android:label="@string/title_activity_visualizza_squadre"/>
+            android:label="@string/title_activity_visualizza_squadre" />
+        <activity android:name=".activity.CreaSquadra"></activity>
     </application>
 
 </manifest>

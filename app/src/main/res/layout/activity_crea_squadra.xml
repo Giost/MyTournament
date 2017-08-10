@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stefano.gioda.mytournament.activity.CreaSquadra">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Dati squadra:"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/nome_squadra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome Squadra"
+                    android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nome_giocatore1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome Giocatore 1"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/cognome_giocatore1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cognome Giocatore 1"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/nascita_giocatore1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Data di nascita Giocatore 1"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/telefono_giocatore1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono Giocatore 1"
+                android:text=""
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/nome_giocatore2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome Giocatore 2"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/cognome_giocatore2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cognome Giocatore 2"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/nascita_giocatore2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Data di nascita Giocatore 2"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/telefono_giocatore2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono Giocatore 2"
+                android:text=""
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/nome_giocatore3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome Giocatore 3"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/cognome_giocatore3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cognome Giocatore 3"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/nascita_giocatore3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Data di nascita Giocatore 3"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/telefono_giocatore3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono Giocatore 3"
+                android:text=""
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/nome_giocatore4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome Giocatore 4"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/cognome_giocatore4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cognome Giocatore 4"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/nascita_giocatore4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Data di nascita Giocatore 4"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/telefono_giocatore4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono Giocatore 4"
+                android:text=""
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/nome_giocatore5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome Giocatore 5"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/cognome_giocatore5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cognome Giocatore 5"
+                android:text=""
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/nascita_giocatore5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Data di nascita Giocatore 5"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/telefono_giocatore5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono Giocatore 5"
+                android:text=""
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/crea_nuova_squadra"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/access_blue"
+                android:text="Crea"
+                android:textColor="@color/blue" />
+
+            <Button
+                android:id="@+id/annulla_nuova_squadra"
+                android:layout_width="120dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/annulla_red"
+                android:text="Annulla"
+                android:textColor="@color/upped_red" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

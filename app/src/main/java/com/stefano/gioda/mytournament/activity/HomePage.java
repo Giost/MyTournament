@@ -24,8 +24,6 @@ import java.util.Arrays;
 
 public class HomePage extends AppCompatActivity {
 
-    private ArrayList<Squadra> squadreRegistrate;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +38,6 @@ public class HomePage extends AppCompatActivity {
                 public void onClick(View view)
                 {
                     Intent visualTornei = new Intent(getApplicationContext(),VisualizzaTornei.class);
-
                     startActivity(visualTornei);
                 }
             }
@@ -51,9 +48,6 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent visualSquadre = new Intent(getApplicationContext(),VisualizzaSquadre.class);
-                squadreRegistrate = new ArrayList<>();
-                squadreRegistrate.add(new Squadra("Prova", new ArrayList<>(Arrays.asList(new Giocatore("a","b","c")))));
-                visualSquadre.putExtra("Squadre", squadreRegistrate);
                 startActivity(visualSquadre);
             }
           }

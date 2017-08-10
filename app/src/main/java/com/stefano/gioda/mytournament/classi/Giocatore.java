@@ -13,18 +13,21 @@ public class Giocatore implements Serializable
     private String nome;
     private String cognome;
     private String dataNascita;
+    private String telefono;
 
     /**
      * Costruttore
      * @param nome valido, !=''
      * @param cognome valido, !=''
      * @param dataNascita valida, nel formato 'dd/mm/YYYY' e !=''
+     * @param telefono valido, !=''
      */
-    public Giocatore(String nome,String cognome,String dataNascita)
+    public Giocatore(String nome,String cognome,String dataNascita,String telefono)
     {
         setNome(nome);
         setCognome(cognome);
         setDataNascita(dataNascita);
+        setTelefono(telefono);
     }
 
     public String getNome() {
@@ -49,5 +52,13 @@ public class Giocatore implements Serializable
 
     private void setDataNascita(String dataNascita) {
         this.dataNascita = dataNascita;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    private void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
