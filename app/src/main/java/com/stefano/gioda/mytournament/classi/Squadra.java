@@ -33,6 +33,6 @@ public class Squadra implements Serializable
     }
 
     private void setGiocatori(ArrayList<Giocatore> giocatori) {
-        this.giocatori = giocatori;
+        this.giocatori = new ArrayList<Giocatore>(giocatori);
     }
 }
