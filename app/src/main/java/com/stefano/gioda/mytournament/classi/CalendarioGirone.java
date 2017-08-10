@@ -26,7 +26,7 @@ public class CalendarioGirone implements Calendario
         this.risultati = new ArrayList<ArrayList<Integer>>();
         sorteggio(numeroSquadre);
 
-        for (int i = 0; i<numeroSquadre; i++)
+        for (int i = 0; i<getNumeroGiornate()*(numeroSquadre/2); i++)
         {
             risultati.add(new ArrayList<Integer>(Arrays.asList(-1,-1)));
         }
@@ -83,7 +83,7 @@ public class CalendarioGirone implements Calendario
 
     /**
      * Restituisce il calendario con tutte le partite del girone d'andata.
-     * Il calendario è un'array, in ogni riga sono presenti gli indici delle due squadre
+     * Il calendario Ã¨ un'array, in ogni riga sono presenti gli indici delle due squadre
      */
     @Override
     public ArrayList<ArrayList<Integer>> getCalendario() {
@@ -92,7 +92,7 @@ public class CalendarioGirone implements Calendario
 
     /**
      * Restituisce il calendario con tutte le partite della giornata,
-     * Il calendario è un'array, in ogni riga sono presenti gli indici delle due squadre
+     * Il calendario Ã¨ un'array, in ogni riga sono presenti gli indici delle due squadre
      * @param index, numero della giornata (la prima giornata ha index=0), >=0 e <getNumeroGiornate()
      */
     @Override
@@ -101,15 +101,15 @@ public class CalendarioGirone implements Calendario
         boolean ritorno = (index<numeroSquadre-1 ? false : true);
         index = index%(numeroSquadre-1);
 
-        for (int i=(numeroSquadre/2)*index;i<numeroSquadre/2;i++)
+        for (int i=0,j=(numeroSquadre/2)*index;i<numeroSquadre/2;i++,j++)
         {
             if (ritorno)
             {
-                giornata.add(new ArrayList<Integer>(Arrays.asList(partite.get(i).get(1),partite.get(i).get(0))));
+                giornata.add(new ArrayList<Integer>(Arrays.asList(partite.get(j).get(1),partite.get(j).get(0))));
             }
             else
             {
-                giornata.add(new ArrayList<>(partite.get(i)));
+                giornata.add(new ArrayList<>(partite.get(j)));
             }
         }
         return giornata;
@@ -138,9 +138,9 @@ public class CalendarioGirone implements Calendario
     public ArrayList<String> getRisultati(int index) {
         ArrayList<String> risultatiString = new ArrayList<String>();
 
-        for (int i=(numeroSquadre/2)*index;i<numeroSquadre/2;i++)
+        for (int i=0,j=(numeroSquadre/2)*index;i<numeroSquadre/2;i++,j++)
         {
-            risultatiString.add(risultati.get(i).get(0)+" - "+risultati.get(i).get(0));
+            risultatiString.add(risultati.get(j).get(0)+" - "+risultati.get(j).get(1));
         }
         return risultatiString;
     }
