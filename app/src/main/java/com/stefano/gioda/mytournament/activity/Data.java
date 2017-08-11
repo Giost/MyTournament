@@ -1,9 +1,14 @@
 package com.stefano.gioda.mytournament.activity;
 
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.stefano.gioda.mytournament.R;
 import com.stefano.gioda.mytournament.classi.Squadra;
 import com.stefano.gioda.mytournament.classi.TorneoEliminazione;
 import com.stefano.gioda.mytournament.classi.TorneoItaliana;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -30,7 +35,7 @@ public class Data
     {
         try
         {
-            FileInputStream inputStream = new FileInputStream("data.ser");
+            FileInputStream inputStream = App.getContext().openFileInput("data.ser");
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
 
             squadreRegistrate = (ArrayList<Squadra>) objectInputStream.readObject();
@@ -42,7 +47,6 @@ public class Data
         }
         catch (Exception ex)
         {
-            System.out.println(ex);
             squadreRegistrate = new ArrayList<>();
             torneiItaliana = new ArrayList<>();
             torneiEliminazione = new ArrayList<>();
@@ -53,7 +57,7 @@ public class Data
     {
         try
         {
-            FileOutputStream outputStream = new FileOutputStream("data.ser");
+            FileOutputStream outputStream = App.getContext().openFileOutput("data.ser", Context.MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
 
             objectOutputStream.writeObject(squadreRegistrate);
