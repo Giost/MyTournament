@@ -4,4 +4,6 @@
     <string name="title_activity_visualizza_tornei">Visualizza Tornei</string>
     <string name="title_activity_visualizza_squadre">Visualizza Squadre</string>
     <string name="title_activity_crea_torneo">Crea Torneo</string>
+    <string name="title_activity_crea_squadra">Crea Squadra</string>
+    <string name="title_activity_visualizza_componenti">Visualizza Squadra</string>
 </resources>

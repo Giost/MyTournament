@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.stefano.gioda.mytournament.R;
 import com.stefano.gioda.mytournament.classi.Squadra;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -77,6 +78,15 @@ public class SquadraAdapter extends RecyclerView.Adapter<SquadraAdapter.MyViewHo
 
             nome.setText(squadra.getNome());
 
+            itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(), VisualizzaComponentiSquadra.class);
+                    i.putExtra("Squadra", squadra);
+                    view.getContext().startActivity(i);
+                }
+            });
         }
     }
 }

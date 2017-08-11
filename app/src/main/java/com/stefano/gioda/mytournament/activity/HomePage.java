@@ -52,5 +52,15 @@ public class HomePage extends AppCompatActivity {
             }
           }
         );
+
+        creaTorneo.setOnClickListener(new View.OnClickListener() {
+                                             @Override
+                                             public void onClick(View view)
+                                             {
+                                                 Intent creaTorneo = new Intent(getApplicationContext(),CreaTorneo.class);
+                                                 startActivity(creaTorneo);
+                                             }
+                                         }
+        );
     }
 }

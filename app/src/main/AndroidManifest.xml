@@ -25,7 +25,15 @@
         <activity
             android:name=".activity.VisualizzaSquadre"
             android:label="@string/title_activity_visualizza_squadre" />
-        <activity android:name=".activity.CreaSquadra"></activity>
+        <activity
+            android:name=".activity.CreaSquadra"
+            android:label="@string/title_activity_crea_squadra" />
+        <activity
+            android:name=".activity.VisualizzaComponentiSquadra"
+            android:label="@string/title_activity_visualizza_componenti" />
+        <activity
+            android:name=".activity.CreaTorneo"
+            android:label="@string/title_activity_crea_torneo" />
     </application>
 
 </manifest>

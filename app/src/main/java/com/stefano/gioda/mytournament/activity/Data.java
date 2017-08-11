@@ -95,5 +95,6 @@ public class Data
     public void addSquadra (Squadra squadra)
     {
         squadreRegistrate.add(squadra);
+        salva();
     }
 }
