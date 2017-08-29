@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipi_torneo">
+        <item>All\'italiana</item>
+        <item>Eliminazione diretta</item>
+    </string-array>
+</resources>

@@ -1,14 +1,11 @@
 package com.stefano.gioda.mytournament.activity;
 
 import android.content.Context;
-import android.content.res.Resources;
 
-import com.stefano.gioda.mytournament.R;
 import com.stefano.gioda.mytournament.classi.Squadra;
 import com.stefano.gioda.mytournament.classi.TorneoEliminazione;
 import com.stefano.gioda.mytournament.classi.TorneoItaliana;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -99,6 +96,18 @@ public class Data
     public void addSquadra (Squadra squadra)
     {
         squadreRegistrate.add(squadra);
+        salva();
+    }
+
+    public void addTorneoItaliana (TorneoItaliana torneo)
+    {
+        torneiItaliana.add(torneo);
+        salva();
+    }
+
+    public void addTorneoEliminazione (TorneoEliminazione torneo)
+    {
+        torneiEliminazione.add(torneo);
         salva();
     }
 }
