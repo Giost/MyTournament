@@ -1,5 +1,6 @@
 package com.stefano.gioda.mytournament.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  *
  * Classe che rappresenta un torneo all'italiana
  */
-public class TorneoItaliana implements Torneo
+public class TorneoItaliana implements Torneo, Serializable
 {
     private String nome;
     private ArrayList<Squadra> squadre;
@@ -66,6 +67,23 @@ public class TorneoItaliana implements Torneo
     {
         calendario.updateRisultato(index1,index2,goal1,goal2);
         classifica.updateRisultato(index1,index2,goal1,goal2);
+    }
+
+    @Override
+    public boolean isFinito()
+    {
+        boolean finito = true;
+
+        for (String risultati : calendario.getRisultati())
+        {
+            if (risultati.equals("-1 - -1"))
+            {
+                finito=false;
+                break;
+            }
+        }
+
+        return finito;
     }
     
     public ArrayList<Integer> getPunti()

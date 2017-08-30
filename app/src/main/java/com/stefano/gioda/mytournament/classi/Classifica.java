@@ -1,5 +1,6 @@
 package com.stefano.gioda.mytournament.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * Classe che rappresenta la classifica di un torneo
  */
 
-public class Classifica
+public class Classifica implements Serializable
 {
     private ArrayList<Integer> punti;
     private ArrayList<Integer> goalFatti;

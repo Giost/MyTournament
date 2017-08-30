@@ -1,12 +1,13 @@
 package com.stefano.gioda.mytournament.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by mint on 8/9/17.
  */
 
-public class TorneoEliminazione implements Torneo
+public class TorneoEliminazione implements Torneo, Serializable
 {
     private String nome;
     private ArrayList<Squadra> squadre;
@@ -62,5 +63,22 @@ public class TorneoEliminazione implements Torneo
     @Override
     public void updateRisultato(int index1, int index2, int goal1, int goal2) {
     	calendario.updateRisultato(index1, index2, goal1, goal2);
+    }
+
+    @Override
+    public boolean isFinito()
+    {
+        boolean finito = true;
+
+        for (String risultati : calendario.getRisultati())
+        {
+            if (risultati.equals("-1 - -1"))
+            {
+                finito=false;
+                break;
+            }
+        }
+
+        return finito;
     }
 }

@@ -1,5 +1,6 @@
 package com.stefano.gioda.mytournament.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import java.util.Arrays;
  *
  * Classe che rappresenta il calendario di un torneo all'italiana
  */
-public class CalendarioGirone implements Calendario
+public class CalendarioGirone implements Calendario, Serializable
 {
     private int numeroSquadre;
     private ArrayList<ArrayList<Integer>> partite;

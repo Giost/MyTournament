@@ -1,5 +1,6 @@
 package com.stefano.gioda.mytournament.classi;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -9,7 +10,7 @@ import java.util.Random;
  *
  * Classe che rappresenta il calendario di un torneo a eliminazione
  */
-public class CalendarioEliminazione implements Calendario
+public class CalendarioEliminazione implements Calendario, Serializable
 {
     private int numeroSquadre;
     private ArrayList<ArrayList<Integer>> partite;
