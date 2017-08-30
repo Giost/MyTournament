@@ -26,13 +26,14 @@ public class VisualizzaSquadre extends AppCompatActivity {
     private RecyclerView recycler;
     private FloatingActionButton fabAdd;
     private SquadraAdapter adapter;
+    private Data holder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizza_squadre);
 
-        Data holder = Data.getInstance();
+        holder = Data.getInstance();
 
         squadre = holder.getSquadre();
 
@@ -111,5 +112,17 @@ public class VisualizzaSquadre extends AppCompatActivity {
         } else
             updateList(mSearchList);*/
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (!squadre.equals(holder.getSquadre()))
+        {
+            squadre = holder.getSquadre();
+            recycler.scrollToPosition(0);
+            adapter.notifyDataSetChanged();
+        }
     }
 }

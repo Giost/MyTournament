@@ -70,7 +70,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/home_recycler"
+        android:id="@+id/tornei_recycler"
         android:layout_below="@+id/torneo_empty"
         android:layout_alignParentBottom="true" />
 

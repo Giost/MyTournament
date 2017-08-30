@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by Stefano Gioda on 8/9/17.
@@ -96,18 +98,42 @@ public class Data
     public void addSquadra (Squadra squadra)
     {
         squadreRegistrate.add(squadra);
+
+        Collections.sort(squadreRegistrate,new Comparator<Squadra>() {
+            @Override
+            public int compare(Squadra s1, Squadra s2) {
+                return s1.getNome().compareToIgnoreCase(s2.getNome());
+            }
+        });
+
         salva();
     }
 
     public void addTorneoItaliana (TorneoItaliana torneo)
     {
         torneiItaliana.add(torneo);
+
+        Collections.sort(torneiItaliana,new Comparator<TorneoItaliana>() {
+            @Override
+            public int compare(TorneoItaliana s1, TorneoItaliana s2) {
+                return s1.getNome().compareToIgnoreCase(s2.getNome());
+            }
+        });
+
         salva();
     }
 
     public void addTorneoEliminazione (TorneoEliminazione torneo)
     {
         torneiEliminazione.add(torneo);
+
+        Collections.sort(torneiEliminazione,new Comparator<TorneoEliminazione>() {
+            @Override
+            public int compare(TorneoEliminazione s1, TorneoEliminazione s2) {
+                return s1.getNome().compareToIgnoreCase(s2.getNome());
+            }
+        });
+
         salva();
     }
 }
