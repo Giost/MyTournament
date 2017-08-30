@@ -6,16 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.stefano.gioda.mytournament.R;
 import com.stefano.gioda.mytournament.classi.Torneo;
+import com.stefano.gioda.mytournament.classi.TorneoEliminazione;
 import com.stefano.gioda.mytournament.classi.TorneoItaliana;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by mint on 8/30/17.
+ * Created by Stefano Gioda on 8/30/17.
  */
 
 public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHolder> {
@@ -55,6 +57,7 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView header, nome, tipo, finito;
+        private Data holder;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -62,6 +65,7 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
             nome = (TextView) itemView.findViewById(R.id.torneo_item_nome);
             tipo = (TextView) itemView.findViewById(R.id.torneo_item_tipo);
             finito = (TextView) itemView.findViewById(R.id.torneo_item_finito);
+            holder = Data.getInstance();
         }
 
         public void bind(final Torneo torneo, int position) {
@@ -88,16 +92,17 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
 
             finito.setText((torneo.isFinito() ? "SI" : "NO"));
 
-            /* IMPLEMENTAZIONE VISUALIZZAZIONE TORNEO
             itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(view.getContext(), VisualizzaComponentiSquadra.class);
-                    i.putExtra("Squadra", squadra);
+                    //System.out.println("############"+ (torneo instanceof TorneoEliminazione ? holder.getTorneiEliminazione().indexOf(torneo) : holder.getTorneiItaliana().indexOf(torneo)));
+                    Intent i = new Intent(view.getContext(), VisualizzaRisultati.class);
+                    i.putExtra("ELIMINAZIONE", torneo instanceof TorneoEliminazione );
+                    i.putExtra("INDICE",(torneo instanceof TorneoEliminazione ? holder.getTorneiEliminazione().indexOf(torneo) : holder.getTorneiItaliana().indexOf(torneo)));
                     view.getContext().startActivity(i);
                 }
-            });*/
+            });
         }
     }
 }

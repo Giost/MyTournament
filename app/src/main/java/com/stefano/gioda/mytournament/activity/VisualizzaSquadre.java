@@ -120,7 +120,8 @@ public class VisualizzaSquadre extends AppCompatActivity {
 
         if (!squadre.equals(holder.getSquadre()))
         {
-            squadre = holder.getSquadre();
+            squadre.clear();
+            squadre.addAll(holder.getSquadre());
             recycler.scrollToPosition(0);
             adapter.notifyDataSetChanged();
         }

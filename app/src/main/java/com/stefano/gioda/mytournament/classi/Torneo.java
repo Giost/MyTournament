@@ -18,4 +18,5 @@ public interface Torneo
     public ArrayList<String> getRisultati(int index);
     public void updateRisultato(int index1,int index2,int goal1,int goal2);
     public boolean isFinito();
+    public int getNumeroFasi();
 }

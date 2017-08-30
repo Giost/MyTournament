@@ -17,6 +17,8 @@ import com.stefano.gioda.mytournament.R;
 import com.stefano.gioda.mytournament.classi.Torneo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class VisualizzaTornei extends AppCompatActivity {
 
@@ -37,6 +39,12 @@ public class VisualizzaTornei extends AppCompatActivity {
         tornei = new ArrayList<>();
         tornei.addAll(holder.getTorneiItaliana());
         tornei.addAll(holder.getTorneiEliminazione());
+        Collections.sort(tornei,new Comparator<Torneo>() {
+            @Override
+            public int compare(Torneo s1, Torneo s2) {
+                return s1.getNome().compareToIgnoreCase(s2.getNome());
+            }
+        });
 
         fields = (LinearLayout) findViewById(R.id.torneo_fields);
         empty = (LinearLayout) findViewById(R.id.torneo_empty);
@@ -111,6 +119,12 @@ public class VisualizzaTornei extends AppCompatActivity {
         ArrayList<Torneo> newList = new ArrayList<>();
         newList.addAll(holder.getTorneiItaliana());
         newList.addAll(holder.getTorneiEliminazione());
+        Collections.sort(newList,new Comparator<Torneo>() {
+            @Override
+            public int compare(Torneo s1, Torneo s2) {
+                return s1.getNome().compareToIgnoreCase(s2.getNome());
+            }
+        });
         if (!tornei.equals(newList))
         {
             tornei = newList;

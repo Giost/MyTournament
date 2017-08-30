@@ -85,7 +85,12 @@ public class TorneoItaliana implements Torneo, Serializable
 
         return finito;
     }
-    
+
+    @Override
+    public int getNumeroFasi() {
+        return calendario.getNumeroGiornate();
+    }
+
     public ArrayList<Integer> getPunti()
     {
     	return classifica.getPunti();

@@ -81,4 +81,9 @@ public class TorneoEliminazione implements Torneo, Serializable
 
         return finito;
     }
+
+    @Override
+    public int getNumeroFasi() {
+        return calendario.getNumeroFasi();
+    }
 }
