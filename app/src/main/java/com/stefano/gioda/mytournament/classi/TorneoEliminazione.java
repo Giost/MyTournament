@@ -4,9 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by mint on 8/9/17.
+ * Created by Stefano Gioda on 8/9/17.
+ *
+ * Classe che rappresenta un torneo a eliminazione diretta
  */
-
 public class TorneoEliminazione implements Torneo, Serializable
 {
     private String nome;
