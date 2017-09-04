@@ -23,14 +23,16 @@ import java.util.HashMap;
 public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHolder> {
 
     private ArrayList<Torneo> items;
-    private HashMap<Character, Integer> mAlphabeticIndex = new HashMap<>();
 
     public TorneoAdapter(ArrayList<Torneo> items) {
         this.items = items;
     }
 
-    public void clearAlphabeticIndex() {
-        mAlphabeticIndex.clear();
+    public void newDataSet (ArrayList<Torneo> newItems)
+    {
+        items.clear();
+        items.addAll(newItems);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -46,7 +48,6 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //System.out.println("Chiamato onBindViewHolder alla posizione: " + position);
         holder.bind(items.get(position), position);
     }
 
@@ -71,11 +72,9 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
         public void bind(final Torneo torneo, int position) {
             Character firstChar = torneo.getNome().toUpperCase().charAt(0);
 
-            if (!mAlphabeticIndex.containsKey(firstChar) || mAlphabeticIndex.get(firstChar) == position) {
+            if (position==0 || firstChar!=items.get(position-1).getNome().toUpperCase().charAt(0)) {
                 header.setText(String.valueOf(firstChar));
                 header.setVisibility(View.VISIBLE);
-                if (mAlphabeticIndex.get(firstChar) == null)
-                    mAlphabeticIndex.put(firstChar, position);
             } else
                 header.setVisibility(View.GONE);
 
@@ -96,7 +95,6 @@ public class TorneoAdapter extends RecyclerView.Adapter<TorneoAdapter.MyViewHold
 
                 @Override
                 public void onClick(View view) {
-                    //System.out.println("############"+ (torneo instanceof TorneoEliminazione ? holder.getTorneiEliminazione().indexOf(torneo) : holder.getTorneiItaliana().indexOf(torneo)));
                     Intent i = new Intent(view.getContext(), VisualizzaRisultati.class);
                     i.putExtra("ELIMINAZIONE", torneo instanceof TorneoEliminazione );
                     i.putExtra("INDICE",(torneo instanceof TorneoEliminazione ? holder.getTorneiEliminazione().indexOf(torneo) : holder.getTorneiItaliana().indexOf(torneo)));

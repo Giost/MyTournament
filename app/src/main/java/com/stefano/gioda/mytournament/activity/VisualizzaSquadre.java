@@ -35,7 +35,7 @@ public class VisualizzaSquadre extends AppCompatActivity {
 
         holder = Data.getInstance();
 
-        squadre = holder.getSquadre();
+        squadre = new ArrayList<>(holder.getSquadre());
 
         fields = (LinearLayout) findViewById(R.id.squadre_fields);
         empty = (LinearLayout) findViewById(R.id.squadre_empty);
@@ -64,66 +64,15 @@ public class VisualizzaSquadre extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_ricerca, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_ricerca_semplice);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                simpleSearch(newText);
-                return true;
-            }
-        });
-
-        return true;
-    }
-
-    private void simpleSearch(String query) {
-        /*
-        ArrayList<Offerta> matchingElement = new ArrayList<>();
-
-        if (!TextUtils.isEmpty(query)) {
-            //query = query.toUpperCase();
-
-            for (Offerta offerta : mSearchList) {
-
-                String dataOfferta = "";
-                if (offerta.getDataOfferta() != null && !TextUtils.isEmpty(offerta.getDataOfferta())) {
-                    dataOfferta = offerta.getDataOfferta();
-                }
-
-                String versione = String.valueOf(offerta.getVersione());
-
-                String presentata = String.valueOf(offerta.getAccettata());
-
-                if (dataOfferta.contains(query) || versione.contains(query) || presentata.contains(query)) {
-                    matchingElement.add(offerta);
-                }
-            }
-            updateList(matchingElement);
-        } else
-            updateList(mSearchList);*/
-
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
-
-        if (!squadre.equals(holder.getSquadre()))
+        adapter.newDataSet(new ArrayList<>(holder.getSquadre()));
+        /*if (!squadre.equals(holder.getSquadre()))
         {
             squadre.clear();
             squadre.addAll(holder.getSquadre());
             recycler.scrollToPosition(0);
             adapter.notifyDataSetChanged();
-        }
+        }*/
     }
 }

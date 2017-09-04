@@ -24,14 +24,16 @@ import java.util.HashMap;
 public class SquadraAdapter extends RecyclerView.Adapter<SquadraAdapter.MyViewHolder> {
 
     private ArrayList<Squadra> items;
-    private HashMap<Character, Integer> mAlphabeticIndex = new HashMap<>();
 
     public SquadraAdapter(ArrayList<Squadra> items) {
         this.items = items;
     }
 
-    public void clearAlphabeticIndex() {
-        mAlphabeticIndex.clear();
+    public void newDataSet (ArrayList<Squadra> newItems)
+    {
+        items.clear();
+        items.addAll(newItems);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -47,7 +49,6 @@ public class SquadraAdapter extends RecyclerView.Adapter<SquadraAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        //System.out.println("Chiamato onBindViewHolder alla posizione: " + position);
         holder.bind(items.get(position), position);
     }
 
@@ -68,19 +69,9 @@ public class SquadraAdapter extends RecyclerView.Adapter<SquadraAdapter.MyViewHo
         public void bind(final Squadra squadra, int position) {
             Character firstChar = squadra.getNome().toUpperCase().charAt(0);
 
-            /*if (!mAlphabeticIndex.containsKey(firstChar) || mAlphabeticIndex.get(firstChar) == position) {
-                header.setText(String.valueOf(firstChar));
-                header.setVisibility(View.VISIBLE);
-                if (mAlphabeticIndex.get(firstChar) == null)
-                    mAlphabeticIndex.put(firstChar, position);
-            } else
-                header.setVisibility(View.GONE);*/
-
             if (position==0 || firstChar!=items.get(position-1).getNome().toUpperCase().charAt(0)) {
                 header.setText(String.valueOf(firstChar));
                 header.setVisibility(View.VISIBLE);
-                if (mAlphabeticIndex.get(firstChar) == null)
-                    mAlphabeticIndex.put(firstChar, position);
             } else
                 header.setVisibility(View.GONE);
 

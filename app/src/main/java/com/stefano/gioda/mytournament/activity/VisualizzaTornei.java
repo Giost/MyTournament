@@ -1,5 +1,6 @@
 package com.stefano.gioda.mytournament.activity;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
@@ -26,6 +27,7 @@ public class VisualizzaTornei extends AppCompatActivity {
     private LinearLayout fields;
     private LinearLayout empty;
     private RecyclerView recycler;
+    private FloatingActionButton fabAdd;
     private TorneoAdapter adapter;
     private Data holder;
 
@@ -49,6 +51,15 @@ public class VisualizzaTornei extends AppCompatActivity {
         fields = (LinearLayout) findViewById(R.id.torneo_fields);
         empty = (LinearLayout) findViewById(R.id.torneo_empty);
         recycler = (RecyclerView) findViewById(R.id.tornei_recycler);
+        fabAdd = (FloatingActionButton) findViewById(R.id.fab_add_torneo);
+
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent addTorneo = new Intent(view.getContext(), CreaTorneo.class);
+                view.getContext().startActivity(addTorneo);
+            }
+        });
 
         if (tornei.isEmpty())
         {
@@ -63,57 +74,6 @@ public class VisualizzaTornei extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_ricerca, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_ricerca_semplice);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                simpleSearch(newText);
-                return true;
-            }
-        });
-
-        return true;
-    }
-
-    private void simpleSearch(String query) {
-        /*
-        ArrayList<Offerta> matchingElement = new ArrayList<>();
-
-        if (!TextUtils.isEmpty(query)) {
-            //query = query.toUpperCase();
-
-            for (Offerta offerta : mSearchList) {
-
-                String dataOfferta = "";
-                if (offerta.getDataOfferta() != null && !TextUtils.isEmpty(offerta.getDataOfferta())) {
-                    dataOfferta = offerta.getDataOfferta();
-                }
-
-                String versione = String.valueOf(offerta.getVersione());
-
-                String presentata = String.valueOf(offerta.getAccettata());
-
-                if (dataOfferta.contains(query) || versione.contains(query) || presentata.contains(query)) {
-                    matchingElement.add(offerta);
-                }
-            }
-            updateList(matchingElement);
-        } else
-            updateList(mSearchList);*/
-
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         ArrayList<Torneo> newList = new ArrayList<>();
@@ -125,11 +85,6 @@ public class VisualizzaTornei extends AppCompatActivity {
                 return s1.getNome().compareToIgnoreCase(s2.getNome());
             }
         });
-        if (!tornei.equals(newList))
-        {
-            tornei = newList;
-            recycler.scrollToPosition(0);
-            adapter.notifyDataSetChanged();
-        }
+        adapter.newDataSet(newList);
     }
 }

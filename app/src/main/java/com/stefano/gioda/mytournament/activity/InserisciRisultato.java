@@ -67,6 +67,8 @@ public class InserisciRisultato extends AppCompatActivity {
                                     holder.getTorneiEliminazione().get(indexTorneo) :
                                     holder.getTorneiItaliana().get(indexTorneo)).updateRisultato(indexSquadraCasa, indexSquadraFuoriCasa, goal1, goal2);
 
+                            holder.salva();
+
                             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(view.getContext());
                             dialogBuilder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                                 @Override

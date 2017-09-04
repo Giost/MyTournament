@@ -30,7 +30,6 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         FrameLayout visualTornei = (FrameLayout) findViewById(R.id.visualizza_tornei);
-        FrameLayout creaTorneo = (FrameLayout) findViewById(R.id.crea_torneo);
         FrameLayout visualSquadre = (FrameLayout) findViewById(R.id.visualizza_squadre);
 
         visualTornei.setOnClickListener(new View.OnClickListener() {
@@ -51,16 +50,6 @@ public class HomePage extends AppCompatActivity {
                 startActivity(visualSquadre);
             }
           }
-        );
-
-        creaTorneo.setOnClickListener(new View.OnClickListener() {
-                                             @Override
-                                             public void onClick(View view)
-                                             {
-                                                 Intent creaTorneo = new Intent(getApplicationContext(),CreaTorneo.class);
-                                                 startActivity(creaTorneo);
-                                             }
-                                         }
         );
     }
 }

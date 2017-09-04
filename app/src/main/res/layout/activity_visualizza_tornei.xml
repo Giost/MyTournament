@@ -74,4 +74,14 @@
         android:layout_below="@+id/torneo_empty"
         android:layout_alignParentBottom="true" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_torneo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/float_add"
+        app:srcCompat="@android:drawable/ic_input_add" />
 </RelativeLayout>

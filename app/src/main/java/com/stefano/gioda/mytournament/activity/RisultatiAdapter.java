@@ -35,6 +35,19 @@ public class RisultatiAdapter extends RecyclerView.Adapter<RisultatiAdapter.MyVi
         eliminazione = torneo instanceof TorneoEliminazione;
     }
 
+    public void newDataSet (Torneo torneo)
+    {
+        this.torneo = torneo;
+        squadre.clear();
+        risultati.clear();
+        for  (int i=0;i<torneo.getNumeroFasi();i++)
+        {
+            squadre.addAll(torneo.getCalendario(i));
+            risultati.addAll(torneo.getRisultati(i));
+        }
+        notifyDataSetChanged();
+    }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(
