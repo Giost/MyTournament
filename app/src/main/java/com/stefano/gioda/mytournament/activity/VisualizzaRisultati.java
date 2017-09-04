@@ -43,4 +43,11 @@ public class VisualizzaRisultati extends AppCompatActivity {
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        adapter.notifyDataSetChanged();
+    }
 }

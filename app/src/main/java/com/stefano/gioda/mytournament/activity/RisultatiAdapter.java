@@ -61,6 +61,7 @@ public class RisultatiAdapter extends RecyclerView.Adapter<RisultatiAdapter.MyVi
         private TextView header, squadraCasa, risultato, squadraFuoriCasa;
         private boolean eliminazione;
         private int numeroSquadre;
+        private Data holder;
 
         public MyViewHolder(View itemView, boolean eliminazione, int numeroSquadre) {
             super(itemView);
@@ -70,6 +71,7 @@ public class RisultatiAdapter extends RecyclerView.Adapter<RisultatiAdapter.MyVi
             squadraCasa = (TextView) itemView.findViewById(R.id.risulati_item_casa);
             squadraFuoriCasa = (TextView) itemView.findViewById(R.id.risulati_item_fuori_casa);
             risultato = (TextView) itemView.findViewById(R.id.risulati_item_risultato);
+            holder = Data.getInstance();
         }
 
         public void bind(final ArrayList<Integer> squadre,final String stringaRisultato, int position) {
@@ -95,17 +97,24 @@ public class RisultatiAdapter extends RecyclerView.Adapter<RisultatiAdapter.MyVi
 
             squadraCasa.setText((squadre.get(0)!=-1 ? torneo.getSquadre().get(squadre.get(0)).getNome() : ""));
             squadraFuoriCasa.setText((squadre.get(1)!=-1 ? torneo.getSquadre().get(squadre.get(1)).getNome() : ""));
-            risultato.setText((!stringaRisultato.equals("-1 - -1") ? stringaRisultato : ""));
-            /*
+            risultato.setText((!stringaRisultato.equals("-1 - -1") ? stringaRisultato : "-"));
+
             itemView.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(view.getContext(), VisualizzaComponentiSquadra.class);
-                    i.putExtra("Squadra", squadra);
-                    view.getContext().startActivity(i);
+                    //System.out.println("risultato:"+risultato);
+                    if (stringaRisultato.equals("-1 - -1") && squadre.get(0)!=-1 && squadre.get(1)!=-1)
+                    {
+                        Intent i = new Intent(view.getContext(), InserisciRisultato.class);
+                        i.putExtra("ELIMINAZIONE", torneo instanceof TorneoEliminazione );
+                        i.putExtra("INDICE",(torneo instanceof TorneoEliminazione ? holder.getTorneiEliminazione().indexOf(torneo) : holder.getTorneiItaliana().indexOf(torneo)));
+                        i.putExtra("INDICE_CASA",squadre.get(0));
+                        i.putExtra("INDICE_FUORI_CASA",squadre.get(1));
+                        view.getContext().startActivity(i);
+                    }
                 }
-            });*/
+            });
         }
     }
 }

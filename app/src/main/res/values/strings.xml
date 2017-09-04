@@ -6,4 +6,6 @@
     <string name="title_activity_crea_torneo">Crea Torneo</string>
     <string name="title_activity_crea_squadra">Crea Squadra</string>
     <string name="title_activity_visualizza_componenti">Visualizza Squadra</string>
+    <string name="title_activity_visualizza_risultati">Visualizza Risultati</string>
+    <string name="title_activity_inserisci_risultato">Inserisci Risultato</string>
 </resources>

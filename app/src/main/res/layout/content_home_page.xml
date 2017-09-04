@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Visualizza tornei"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white" />
@@ -43,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="Crea torneo"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/white" />
@@ -60,7 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Visualizza squadre"
+                android:gravity="center"
+                android:text="Squadre"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/white" />
 

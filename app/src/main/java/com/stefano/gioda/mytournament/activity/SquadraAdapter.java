@@ -68,7 +68,15 @@ public class SquadraAdapter extends RecyclerView.Adapter<SquadraAdapter.MyViewHo
         public void bind(final Squadra squadra, int position) {
             Character firstChar = squadra.getNome().toUpperCase().charAt(0);
 
-            if (!mAlphabeticIndex.containsKey(firstChar) || mAlphabeticIndex.get(firstChar) == position) {
+            /*if (!mAlphabeticIndex.containsKey(firstChar) || mAlphabeticIndex.get(firstChar) == position) {
+                header.setText(String.valueOf(firstChar));
+                header.setVisibility(View.VISIBLE);
+                if (mAlphabeticIndex.get(firstChar) == null)
+                    mAlphabeticIndex.put(firstChar, position);
+            } else
+                header.setVisibility(View.GONE);*/
+
+            if (position==0 || firstChar!=items.get(position-1).getNome().toUpperCase().charAt(0)) {
                 header.setText(String.valueOf(firstChar));
                 header.setVisibility(View.VISIBLE);
                 if (mAlphabeticIndex.get(firstChar) == null)

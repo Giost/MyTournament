@@ -35,7 +35,12 @@
         <activity
             android:name=".activity.CreaTorneo"
             android:label="@string/title_activity_crea_torneo" />
-        <activity android:name=".activity.VisualizzaRisultati"></activity>
+        <activity
+            android:name=".activity.VisualizzaRisultati"
+            android:label="@string/title_activity_visualizza_risultati"/>
+        <activity
+            android:name=".activity.InserisciRisultato"
+            android:label="@string/title_activity_inserisci_risultato"/>
     </application>
 
 </manifest>
