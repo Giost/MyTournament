@@ -42,12 +42,6 @@ public class VisualizzaSquadre extends AppCompatActivity {
         recycler = (RecyclerView) findViewById(R.id.squadre_recycler);
         fabAdd = (FloatingActionButton) findViewById(R.id.fab_add_squadra);
 
-        if (squadre.isEmpty())
-        {
-            empty.setVisibility(View.VISIBLE);
-            fields.setVisibility(View.GONE);
-        }
-
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -67,12 +61,16 @@ public class VisualizzaSquadre extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         adapter.newDataSet(new ArrayList<>(holder.getSquadre()));
-        /*if (!squadre.equals(holder.getSquadre()))
+
+        if (holder.getSquadre().isEmpty())
         {
-            squadre.clear();
-            squadre.addAll(holder.getSquadre());
-            recycler.scrollToPosition(0);
-            adapter.notifyDataSetChanged();
-        }*/
+            empty.setVisibility(View.VISIBLE);
+            fields.setVisibility(View.GONE);
+        }
+        else
+        {
+            empty.setVisibility(View.GONE);
+            fields.setVisibility(View.VISIBLE);
+        }
     }
 }

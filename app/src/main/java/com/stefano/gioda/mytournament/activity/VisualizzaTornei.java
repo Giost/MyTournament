@@ -61,12 +61,6 @@ public class VisualizzaTornei extends AppCompatActivity {
             }
         });
 
-        if (tornei.isEmpty())
-        {
-            empty.setVisibility(View.VISIBLE);
-            fields.setVisibility(View.GONE);
-        }
-
         adapter = new TorneoAdapter(tornei);
 
         recycler.setAdapter(adapter);
@@ -86,5 +80,16 @@ public class VisualizzaTornei extends AppCompatActivity {
             }
         });
         adapter.newDataSet(newList);
+
+        if (newList.isEmpty())
+        {
+            empty.setVisibility(View.VISIBLE);
+            fields.setVisibility(View.GONE);
+        }
+        else
+        {
+            empty.setVisibility(View.GONE);
+            fields.setVisibility(View.VISIBLE);
+        }
     }
 }
